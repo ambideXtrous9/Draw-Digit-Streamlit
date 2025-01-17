@@ -5,9 +5,11 @@ from hyperparams import params
 import os
 
 
+from google.cloud import storage
+client = storage.Client()
+
 trackinguri = "http://35.200.174.226:5000/"
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/home/runner/work/Draw-Digit-Streamlit/Draw-Digit-Streamlit/credentials.json'
 
 
 mlflow.set_tracking_uri(trackinguri)
