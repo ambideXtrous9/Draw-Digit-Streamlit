@@ -36,6 +36,7 @@ jobs:
     - name: Write GCP credentials to JSON file
       run: |
         echo "${{ secrets.GCP_SA_KEY }}" > credentials.json
+        echo "Path of credentials.json: $(pwd)/credentials.json"
 
     - name: Build Docker Image
       run: docker build -t $IMAGE_NAME:latest .
@@ -54,7 +55,7 @@ jobs:
           --platform managed \
           --region $REGION \
           --port "${{ env.PORT }}" \
-          --set-env-vars "GOOGLE_APPLICATION_CREDENTIALS" = "${{ secrets.GCP_SA_KEY }}" \
+          --set-env-vars GOOGLE_APPLICATION_CREDENTIALS = credentials.json \
           --memory "${{ env.MEMORY }}"
 
     - name: Set IAM Policy to Allow Public Access
