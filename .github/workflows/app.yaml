@@ -61,7 +61,7 @@ jobs:
       run: |
         gcloud run services add-iam-policy-binding $SERVICE_NAME \
           --region=$REGION \
-          --member="305807224132-compute@developer.gserviceaccount.com" \
+          --member="serviceAccount:305807224132-compute@developer.gserviceaccount.com" \
           --role="roles/run.invoker"
 
           
