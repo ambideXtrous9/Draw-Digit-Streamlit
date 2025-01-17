@@ -7,22 +7,22 @@ from PIL import Image, ImageOps
 import numpy as np
 import torch
 from torchvision import transforms
-# from loadmodel import getModel
+from loadmodel import getModel
 
 import streamlit as st
 
 
-# @st.cache_resource
-# def load_model():
-#     if 'models' not in st.session_state:
-#         st.session_state.models = getModel()
-#         return st.session_state.models
+@st.cache_resource
+def load_model():
+    if 'models' not in st.session_state:
+        st.session_state.models = getModel()
+        return st.session_state.models
     
     
-# if st.button("Refresh Models"):
-#     st.cache_resource.clear()
+if st.button("Refresh Models"):
+    st.cache_resource.clear()
 
-model = None
+model = getModel()
 
 
 
