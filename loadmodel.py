@@ -7,7 +7,7 @@ import os
 
 trackinguri = "http://35.200.174.226:5000/"
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
 
 
 mlflow.set_tracking_uri(trackinguri)
