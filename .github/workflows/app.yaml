@@ -55,7 +55,7 @@ jobs:
           --platform managed \
           --region $REGION \
           --port "${{ env.PORT }}" \
-          --set-env-vars GOOGLE_APPLICATION_CREDENTIALS = credentials.json \
+          --set-env-vars GOOGLE_APPLICATION_CREDENTIALS=credentials.json \
           --memory "${{ env.MEMORY }}"
 
     - name: Set IAM Policy to Allow Public Access
