@@ -22,7 +22,7 @@ def load_model():
 if st.button("Refresh Models"):
     st.cache_resource.clear()
 
-model = load_model()
+model = None
 
 
 
